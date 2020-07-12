@@ -4,7 +4,8 @@
 #include <string>
 #include <vector>
 
-struct cpu_usage_item {
+struct cpu_usage_item
+{
   std::string name;
   long long user;
   long long nice;
@@ -22,7 +23,8 @@ struct cpu_usage_item {
 
 std::istream &operator>>(std::istream &in, cpu_usage_item &item);
 
-struct cpu_usage {
+struct cpu_usage
+{
   cpu_usage_item total;
   std::vector<cpu_usage_item> cpu_usage_list;
 
