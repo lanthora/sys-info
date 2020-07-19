@@ -15,3 +15,4 @@ clean:
 	rm bin/*
 	rm src/cpu/*.o
 	rm src/mem/*.o
+	

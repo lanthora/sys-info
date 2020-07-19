@@ -5,6 +5,17 @@
 #include <iostream>
 #include <istream>
 
+extern "C"
+{
+  void bind_cpu(int core)
+  {
+    cpu_set_t mask;
+    CPU_ZERO(&mask);
+    CPU_SET(core, &mask);
+    sched_setaffinity(0, sizeof(cpu_set_t), &mask);
+  }
+}
+
 const unsigned short print_len = 12;
 
 void cpu_usage_item::show() const

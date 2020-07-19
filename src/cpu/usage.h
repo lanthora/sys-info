@@ -1,8 +1,19 @@
 #ifndef CPU_USAGE_H
 #define CPU_USAGE_H
 
+#ifndef _GNU_SOURCE
+#define _GNU_SOURCE
+#endif
+
 #include <string>
 #include <vector>
+
+extern "C"
+{
+  void bind_cpu(int core);
+}
+
+
 
 struct cpu_usage_item
 {
